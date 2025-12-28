@@ -2,9 +2,19 @@
 
 import { motion } from 'framer-motion'
 import { 
-  Gamepad2, Trophy, Zap, Target, Star, Download,
-  ChevronRight, Sparkles, Timer, Heart, Map,
-  Calendar, TrendingUp,
+  Gamepad2, 
+  Trophy, 
+  Zap, 
+  Target, 
+  Star, 
+  Download,
+  ChevronRight,
+  Sparkles,
+  Timer,
+  Heart,
+  Map,
+  Calendar,
+  TrendingUp,
 } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
@@ -13,7 +23,6 @@ import FeatureCard from '@/components/FeatureCard'
 import ModeCard from '@/components/ModeCard'
 import PowerUpDemo from '@/components/PowerUpDemo'
 
-// Ajoutez cette interface pour typer les particules
 interface Particle {
   initialX: number
   initialY: number
@@ -24,10 +33,10 @@ interface Particle {
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
-  const [particles, setParticles] = useState<Particle[]>([]) // <-- CHANGEZ ICI
+  const [particles, setParticles] = useState<Particle[]>([])
 
   useEffect(() => {
-    const newParticles: Particle[] = [...Array(20)].map(() => ({ // <-- CHANGEZ ICI
+    const newParticles: Particle[] = [...Array(20)].map(() => ({
       initialX: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
       initialY: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
       targetX: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
@@ -86,21 +95,23 @@ export default function Home() {
                 className="inline-flex items-center gap-2 bg-linear-to-r from-orange-500 to-yellow-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-6"
               >
                 <Sparkles className="w-4 h-4" />
-                {t('hero.badge')}
+                Now Available on iOS
               </motion.div>
 
               <h1 className="text-6xl lg:text-7xl font-black mb-6">
                 <span className="bg-linear-to-r from-orange-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                  {t('hero.title')}
+                  MERGE MAX
                 </span>
                 <br />
                 <span className="text-white text-5xl lg:text-6xl">
-                  {t('hero.subtitle')}
+                  The Ultimate 2048
                 </span>
               </h1>
 
               <p className="text-xl text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0">
-                {t('hero.description')}
+                Experience the most addictive puzzle game with stunning animations, 
+                multiple game modes, and exciting power-ups. Merge tiles, reach 2048, 
+                and become a puzzle master!
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -111,7 +122,7 @@ export default function Home() {
                   className="inline-flex items-center justify-center gap-2 bg-linear-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg shadow-orange-500/50 hover:shadow-orange-500/70 transition-all"
                 >
                   <Download className="w-5 h-5" />
-                  {t('hero.downloadNow')}
+                  Download Now
                 </motion.a>
 
                 <motion.a
@@ -120,7 +131,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-bold text-lg border border-white/20 hover:bg-white/20 transition-all"
                 >
-                  {t('hero.learnMore')}
+                  Learn More
                   <ChevronRight className="w-5 h-5" />
                 </motion.a>
               </div>
@@ -133,9 +144,9 @@ export default function Home() {
                 className="grid grid-cols-3 gap-6 mt-12"
               >
                 {[
-                  { label: t('hero.stats.levels'), value: '250+' },
-                  { label: t('hero.stats.achievements'), value: '30+' },
-                  { label: t('hero.stats.modes'), value: '4' },
+                  { label: 'Adventure Levels', value: '250+' },
+                  { label: 'Achievements', value: '30+' },
+                  { label: 'Game Modes', value: '4' },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
                     <div className="text-3xl font-black text-orange-400">{stat.value}</div>
@@ -184,53 +195,53 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-black text-white mb-4">
-              {t('features.title')}
+              Why You&apos;ll Love It
             </h2>
             <p className="text-xl text-gray-400">
-              {t('features.subtitle')}
+              Packed with features to keep you entertained for hours
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FeatureCard
               icon={<Map className="w-8 h-8" />}
-              title={t('features.adventureLevels.title')}
-              description={t('features.adventureLevels.description')}
+              title="250+ Adventure Levels"
+              description="Progress through challenging levels with unique objectives and epic rewards"
               color="from-purple-500 to-pink-500"
               delay={0.1}
             />
             <FeatureCard
               icon={<Trophy className="w-8 h-8" />}
-              title={t('features.achievements.title')}
-              description={t('features.achievements.description')}
+              title="30+ Achievements"
+              description="Unlock achievements and earn bonus coins as you master the game"
               color="from-yellow-500 to-orange-500"
               delay={0.2}
             />
             <FeatureCard
               icon={<Zap className="w-8 h-8" />}
-              title={t('features.powerups.title')}
-              description={t('features.powerups.description')}
+              title="Powerful Power-Ups"
+              description="Use Undo, Shuffle, and Rocket to overcome tough situations"
               color="from-green-500 to-teal-500"
               delay={0.3}
             />
             <FeatureCard
               icon={<Target className="w-8 h-8" />}
-              title={t('features.dailyQuests.title')}
-              description={t('features.dailyQuests.description')}
+              title="Daily Quests"
+              description="Complete daily challenges to earn extra coins and exclusive rewards"
               color="from-orange-500 to-red-500"
               delay={0.4}
             />
             <FeatureCard
               icon={<Gamepad2 className="w-8 h-8" />}
-              title={t('features.gamecenter.title')}
-              description={t('features.gamecenter.description')}
+              title="GameCenter Integration"
+              description="Compete with players worldwide on global leaderboards"
               color="from-blue-500 to-purple-500"
               delay={0.5}
             />
             <FeatureCard
               icon={<Star className="w-8 h-8" />}
-              title={t('features.animations.title')}
-              description={t('features.animations.description')}
+              title="Stunning Animations"
+              description="Smooth, satisfying animations and haptic feedback"
               color="from-pink-500 to-purple-500"
               delay={0.6}
             />
@@ -251,15 +262,15 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 bg-linear-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-bold mb-8">
               <Calendar className="w-5 h-5" />
-              {t('updates.badge')}
+              Regular Updates
             </div>
 
             <h2 className="text-5xl font-black text-white mb-6">
-              {t('updates.title')}
+              Always Fresh Content
             </h2>
             
             <p className="text-xl text-gray-300 mb-12">
-              {t('updates.subtitle')}
+              We&apos;re committed to keeping the game exciting with regular updates every 2 weeks
             </p>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -271,13 +282,13 @@ export default function Home() {
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all"
               >
                 <div className="text-6xl font-black bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-                  {t('updates.newLevels.count')}
+                  100
                 </div>
-                <div className="text-2xl font-bold text-white mb-2">{t('updates.newLevels.title')}</div>
-                <div className="text-gray-400">{t('updates.newLevels.frequency')}</div>
+                <div className="text-2xl font-bold text-white mb-2">New Levels</div>
+                <div className="text-gray-400">Every 2 weeks</div>
                 <div className="mt-4 flex items-center justify-center gap-2 text-purple-400">
                   <TrendingUp className="w-5 h-5" />
-                  <span className="text-sm font-semibold">{t('updates.newLevels.badge')}</span>
+                  <span className="text-sm font-semibold">Continuous Growth</span>
                 </div>
               </motion.div>
 
@@ -289,13 +300,13 @@ export default function Home() {
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all"
               >
                 <div className="text-6xl font-black bg-linear-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-4">
-                  {t('updates.completions.count')}
+                  5
                 </div>
-                <div className="text-2xl font-bold text-white mb-2">{t('updates.completions.title')}</div>
-                <div className="text-gray-400">{t('updates.completions.description')}</div>
+                <div className="text-2xl font-bold text-white mb-2">Special Completions</div>
+                <div className="text-gray-400">Exclusive challenges</div>
                 <div className="mt-4 flex items-center justify-center gap-2 text-yellow-400">
                   <Star className="w-5 h-5" />
-                  <span className="text-sm font-semibold">{t('updates.completions.badge')}</span>
+                  <span className="text-sm font-semibold">Epic Rewards</span>
                 </div>
               </motion.div>
             </div>
@@ -308,7 +319,7 @@ export default function Home() {
               className="mt-12 bg-linear-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-2xl p-6"
             >
               <p className="text-white font-semibold">
-                {t('updates.banner')}
+                🎉 Never run out of content! New adventures await you every two weeks
               </p>
             </motion.div>
           </motion.div>
@@ -325,39 +336,39 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-black text-white mb-4">
-              {t('modes.title')}
+              Multiple Game Modes
             </h2>
             <p className="text-xl text-gray-400">
-              {t('modes.subtitle')}
+              Choose your challenge, master them all
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <ModeCard
               icon={<Gamepad2 className="w-12 h-12" />}
-              title={t('modes.classic.title')}
-              description={t('modes.classic.description')}
+              title="Classic"
+              description="Traditional 2048 gameplay with no time limits"
               color="from-orange-500 to-yellow-500"
               delay={0.1}
             />
             <ModeCard
               icon={<Map className="w-12 h-12" />}
-              title={t('modes.adventure.title')}
-              description={t('modes.adventure.description')}
+              title="Adventure"
+              description="Progress through 250 unique levels"
               color="from-purple-500 to-pink-500"
               delay={0.2}
             />
             <ModeCard
               icon={<Timer className="w-12 h-12" />}
-              title={t('modes.timeAttack.title')}
-              description={t('modes.timeAttack.description')}
+              title="Time Attack"
+              description="Race against the clock to reach 2048"
               color="from-red-500 to-orange-500"
               delay={0.3}
             />
             <ModeCard
               icon={<Heart className="w-12 h-12" />}
-              title={t('modes.survival.title')}
-              description={t('modes.survival.description')}
+              title="Survival"
+              description="Limited moves - make every swipe count"
               color="from-green-500 to-teal-500"
               delay={0.4}
             />
@@ -375,10 +386,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-black text-white mb-4">
-              {t('powerups.title')}
+              Game-Changing Power-Ups
             </h2>
             <p className="text-xl text-gray-400">
-              {t('powerups.subtitle')}
+              Strategic tools to help you succeed
             </p>
           </motion.div>
 
@@ -398,15 +409,15 @@ export default function Home() {
             className="max-w-4xl mx-auto text-center"
           >
             <h2 className="text-5xl lg:text-6xl font-black text-white mb-6">
-              {t('cta.title')}
+              Ready to Start Your
               <br />
               <span className="bg-linear-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
-                {t('cta.subtitle')}
+                Puzzle Adventure?
               </span>
             </h2>
             
             <p className="text-xl text-gray-300 mb-12">
-              {t('cta.description')}
+              Download MergeMax now and join thousands of players worldwide!
             </p>
 
             <motion.a
@@ -417,11 +428,11 @@ export default function Home() {
               className="inline-flex items-center gap-3 bg-linear-to-r from-orange-500 to-red-500 text-white px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl shadow-orange-500/50 hover:shadow-orange-500/70 transition-all"
             >
               <Download className="w-6 h-6" />
-              {t('cta.download')}
+              Download on App Store
             </motion.a>
 
             <p className="text-gray-500 mt-6 text-sm">
-              {t('cta.footer')}
+              Free to play • iOS 14.0 or later
             </p>
           </motion.div>
         </div>
@@ -434,7 +445,7 @@ export default function Home() {
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-black text-white mb-2">MERGE MAX</h3>
               <p className="text-gray-400 text-sm">
-                {t('footer.copyright')}
+                © 2024 codewitholiver. All rights reserved.
               </p>
             </div>
 
@@ -443,19 +454,19 @@ export default function Home() {
                 href="/privacy" 
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                {t('navigation.privacy')}
+                Privacy Policy
               </Link>
               <Link 
                 href="/terms" 
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                {t('navigation.terms')}
+                Terms of Service
               </Link>
               <a 
                 href="mailto:support@mergemax.com" 
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                {t('navigation.support')}
+                Support
               </a>
             </div>
           </div>
