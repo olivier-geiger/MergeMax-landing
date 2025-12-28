@@ -8,7 +8,6 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { useTranslations } from 'next-intl'
 import DemoBoard from '@/components/DemoBoard'
 import FeatureCard from '@/components/FeatureCard'
 import ModeCard from '@/components/ModeCard'
@@ -24,12 +23,11 @@ interface Particle {
 }
 
 export default function Home() {
-  const t = useTranslations();
   const [mounted, setMounted] = useState(false)
-  const [particles, setParticles] = useState<Particle[]>([]) // Ajoutez le type ici
+  const [particles, setParticles] = useState<Particle[]>([]) // <-- CHANGEZ ICI
 
   useEffect(() => {
-    const newParticles: Particle[] = [...Array(20)].map(() => ({ // Ajoutez le type ici aussi
+    const newParticles: Particle[] = [...Array(20)].map(() => ({ // <-- CHANGEZ ICI
       initialX: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
       initialY: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
       targetX: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
