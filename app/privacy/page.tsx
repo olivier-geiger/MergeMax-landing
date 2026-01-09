@@ -41,7 +41,7 @@ export default function TermsOfService() {
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-white mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-300 leading-relaxed">
-              By downloading, installing, or using MergeMax: 2048 (&quot;the App&quot;), you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, please do not use the App.
+              By downloading, installing, or using Puzzle Conquest (&quot;the App&quot;), you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, please do not use the App.
             </p>
           </div>
 
@@ -327,13 +327,13 @@ export default function TermsOfService() {
             <div className="text-gray-300">
               <p>Email: <a href="mailto:olivier.codes@gmail.com" className="text-orange-400 hover:underline">olivier.codes@gmail.com</a></p>
               <p className="mt-2">Developer: codewitholiver</p>
-              <p className="mt-2">Website: <a href="https://mergemax.app" className="text-orange-400 hover:underline">mergemax.app</a></p>
+              <p className="mt-2">Website: <a href="https://mergemax.app" className="text-orange-400 hover:underline">puzzleconquest.app</a></p>
             </div>
           </div>
 
           <div className="bg-orange-500/10 border border-orange-500/30 rounded-2xl p-6 mt-8">
             <p className="text-orange-300 text-sm">
-              <strong>Important Notice:</strong> By using MergeMax: 2048, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our{' '}
+              <strong>Important Notice:</strong> By using Puzzle Conquest, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our{' '}
               <Link href="/privacy" className="underline hover:text-orange-200">
                 Privacy Policy
               </Link>. The App uses third-party services (Firebase Analytics, Google AdMob, Apple GameCenter, iCloud) which have their own terms and privacy policies.

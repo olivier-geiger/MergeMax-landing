@@ -100,7 +100,7 @@ export default function Home() {
 
               <h1 className="text-6xl lg:text-7xl font-black mb-6">
                 <span className="bg-linear-to-r from-orange-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                  MERGE MAX
+                  PUZZLE CONQUEST
                 </span>
                 <br />
                 <span className="text-white text-5xl lg:text-6xl">
@@ -417,7 +417,7 @@ export default function Home() {
             </h2>
             
             <p className="text-xl text-gray-300 mb-12">
-              Download MergeMax now and join thousands of players worldwide!
+              Download PuzzleConquest now and join thousands of players worldwide!
             </p>
 
             <motion.a
@@ -443,7 +443,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-black text-white mb-2">MERGE MAX</h3>
+              <h3 className="text-2xl font-black text-white mb-2">Puzzle Conquest</h3>
               <p className="text-gray-400 text-sm">
                 © 2024 codewitholiver. All rights reserved.
               </p>
